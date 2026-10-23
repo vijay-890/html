@@ -1,3 +1,7 @@
-# HTML Learning Repository
+# HTML Learning Lab
 
-This repository is currently empty. Add the HTML practice files and a short description of each exercise before sharing it as a project.
+A small browser-based reference page for practicing semantic HTML elements, links, lists, tables, details, and a form.
+
+## Run it
+
+Open index.html in any browser. The form displays a local confirmation only.

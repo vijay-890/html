@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A small set of beginner HTML examples.">
+  <title>HTML Learning Lab</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #223148; background: #f4f7fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header, main, footer { width: min(900px, calc(100% - 32px)); margin: auto; }
+    header { padding: 36px 0 16px; }
+    header p { color: #63718a; line-height: 1.7; }
+    nav { display: flex; flex-wrap: wrap; gap: 12px; }
+    nav a { color: #3454c7; font-weight: 700; }
+    section { margin: 18px 0; padding: 22px; border: 1px solid #e1e7f0; border-radius: 14px; background: white; }
+    h1 { margin-bottom: 5px; font-size: clamp(2rem, 5vw, 3.3rem); }
+    h2 { margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border: 1px solid #dce2ec; text-align: left; }
+    label { display: grid; gap: 6px; margin: 12px 0; font-weight: 700; }
+    input { padding: 10px; border: 1px solid #ccd4e0; border-radius: 8px; font: inherit; }
+    button { padding: 10px 16px; border: 0; border-radius: 8px; color: white; background: #3454c7; font: inherit; font-weight: 700; cursor: pointer; }
+    #form-result { color: #176d65; }
+    footer { padding: 25px 0; color: #63718a; }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Beginner reference page</span>
+    <h1>HTML Learning Lab</h1>
+    <p>Explore headings, links, lists, tables, expandable details, and a form in one small practice page.</p>
+    <nav aria-label="Page contents">
+      <a href="#structure">Structure</a><a href="#lists">Lists</a><a href="#table">Table</a><a href="#form">Form</a>
+    </nav>
+  </header>
+  <main>
+    <section id="structure">
+      <h2>Page structure</h2>
+      <article>
+        <h3>Semantic HTML</h3>
+        <p>Use <strong>meaningful elements</strong> to make content easier to read and navigate.</p>
+        <details><summary>What is a semantic element?</summary><p>An element that describes the purpose of its content, such as header, nav, main, article, or footer.</p></details>
+      </article>
+    </section>
+    <section id="lists">
+      <h2>Lists</h2>
+      <h3>Learning steps</h3>
+      <ol><li>Write the page structure.</li><li>Add clear content.</li><li>Check headings and links.</li></ol>
+      <h3>Useful tags</h3>
+      <ul><li>section</li><li>figure</li><li>details</li><li>form</li></ul>
+    </section>
+    <section id="table">
+      <h2>Small reference table</h2>
+      <table>
+        <thead><tr><th>Element</th><th>Purpose</th></tr></thead>
+        <tbody><tr><td>nav</td><td>Groups navigation links</td></tr><tr><td>figure</td><td>Groups media with a caption</td></tr><tr><td>form</td><td>Collects user input</td></tr></tbody>
+      </table>
+    </section>
+    <section id="form">
+      <h2>Practice form</h2>
+      <p>This form shows a message in the page; it does not send data anywhere.</p>
+      <form id="practice-form">
+        <label for="learner-name">Your name<input id="learner-name" name="name" required></label>
+        <label for="learner-email">Email<input id="learner-email" name="email" type="email" required></label>
+        <button type="submit">Show confirmation</button>
+      </form>
+      <p id="form-result" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer>HTML Learning Lab · Practice project</footer>
+  <script>
+    document.querySelector("#practice-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      document.querySelector("#form-result").textContent = "Thanks! The form is working in this demo.";
+      event.currentTarget.reset();
+    });
+  </script>
+</body>
+</html>
